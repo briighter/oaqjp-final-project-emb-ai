@@ -9,7 +9,7 @@ def emotion_detector(text_to_analyse):
     dominantemotion = ''
     maxValue = formatted_response['emotionPredictions'][0]['emotion']['anger']
     for emotion in formatted_response['emotionPredictions'][0]['emotion']:
-        if formatted_response['emotionPredictions'][0]['emotion'][emotion] > maxValue:
+        if formatted_response['emotionPredictions'][0]['emotion'][emotion] >= maxValue:
             maxValue = formatted_response['emotionPredictions'][0]['emotion'][emotion]
             dominantemotion = emotion
     formatted_response['emotionPredictions'][0]['emotion']["dominant_emotion"] = dominantemotion
